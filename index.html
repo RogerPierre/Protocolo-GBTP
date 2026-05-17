@@ -51,6 +51,19 @@
             font-size: 1.8rem;
         }
 
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .inputs input {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
         .acoes {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -73,10 +86,13 @@
             color: white;
         }
 
-        button:focus {
-            outline: 3px solid #08708f;
-            outline-offset: 3px;
+        #resultado {
+            margin-top: 25px;
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 10px;
         }
+
     </style>
 
 </head>
@@ -92,28 +108,56 @@
             <h2>Olá, Cliente 👋</h2>
         </div>
 
+        <div class="inputs">
+
+            <input
+                type="text"
+                id="accountId"
+                placeholder="Conta origem"
+            >
+
+            <input
+                type="text"
+                id="toAccountId"
+                placeholder="Conta destino"
+            >
+
+            <input
+                type="number"
+                id="value"
+                placeholder="Valor"
+            >
+
+        </div>
+
         <div class="acoes">
 
-            <button id="balance" class="botao">
+            <button id="btnSaldo" class="botao">
                 Saldo
             </button>
 
-            <button id="transfer" class="botao">
+            <button id="btnTransferencia" class="botao">
                 Transferência
             </button>
 
-            <button id="withdraw" class="botao">
+            <button id="btnSaque" class="botao">
                 Saque
             </button>
 
-            <button id="deposit" class="botao">
+            <button id="btnDeposito" class="botao">
                 Depósito
             </button>
 
         </div>
 
+        <div id="resultado">
+
+        </div>
+
     </div>
-    <script type="module" src="./src/GUI/index.ts"></script>
-    <script src="src/GUI/index.ts"></script>
+
+    <script type="module" src="./src/gui/index.ts"></script>
+
+</body>
 
 </html>
